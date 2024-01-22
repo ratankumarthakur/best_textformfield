@@ -1,0 +1,30 @@
+Padding(
+                    padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 20.0),
+                    child: Container(height: 50,decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(11),color: Colors.white.withOpacity(.5)
+                    ),
+                      child: TextFormField(keyboardType: TextInputType.name,validator: (value){
+                        if(value!.isEmpty || !RegExp(r'^[a-z A-Z]+$').hasMatch(value!)){
+                          return "Enter correct name";
+                        }else{
+                          return null;
+                        }
+                      },
+                        decoration: InputDecoration(labelText: "Username",prefixIcon: Icon(Icons.person),
+                          hintText: "Create username",
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(11),
+                              borderSide: const BorderSide(
+                                  color: Colors.green
+                              )
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(11),
+                              borderSide: const BorderSide(
+                                  color: Colors.red
+                              )
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
